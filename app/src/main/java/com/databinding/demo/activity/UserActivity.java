@@ -1,7 +1,9 @@
-package com.databinding.demo;
+package com.databinding.demo.activity;
 
 import android.view.View;
 
+import com.databinding.demo.R;
+import com.databinding.demo.activity.BaseBindingActivity;
 import com.databinding.demo.databinding.ActivityUserBindingImpl;
 import com.databinding.demo.model.UserModel;
 

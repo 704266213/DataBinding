@@ -8,6 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.databinding.demo.activity.AdapterDataActivity;
+import com.databinding.demo.activity.AutoUpdateUiByDataChangeActivity;
+import com.databinding.demo.activity.BaseAdapterActivity;
+import com.databinding.demo.activity.LiveDataActivity;
+import com.databinding.demo.activity.RoomActivity;
+import com.databinding.demo.activity.UserActivity;
 import com.databinding.demo.model.UserModel;
 
 /**
@@ -63,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LiveDataActivity.class);
         startActivity(intent);
     }
+
+    public void roomDemo(View view) {
+        Log.e("XLog", "========== Id : " + view.getId());
+        Intent intent = new Intent(this, RoomActivity.class);
+        startActivity(intent);
+    }
+
 
 
 }

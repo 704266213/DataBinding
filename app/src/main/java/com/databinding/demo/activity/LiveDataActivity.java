@@ -1,4 +1,4 @@
-package com.databinding.demo;
+package com.databinding.demo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.databinding.demo.R;
 import com.databinding.demo.model.BookModel;
 import com.databinding.demo.viewModel.BookViewModel;
 

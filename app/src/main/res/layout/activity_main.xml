@@ -92,6 +92,19 @@
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/roomDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:onClick="@{(view)->mainClickListener.roomDemo(view)}"
+            android:text="数据库roomDemo"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
 </layout>

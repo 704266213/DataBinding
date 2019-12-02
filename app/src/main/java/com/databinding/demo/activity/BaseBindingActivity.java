@@ -1,4 +1,4 @@
-package com.databinding.demo;
+package com.databinding.demo.activity;
 
 import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.databinding.demo;
+package com.databinding.demo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.databinding.demo.R;
 import com.databinding.demo.databinding.ActivityUpdateUiByDataBinding;
 import com.databinding.demo.model.UserModel;
 
