@@ -11,9 +11,12 @@ import android.view.View;
 import com.databinding.demo.activity.AdapterDataActivity;
 import com.databinding.demo.activity.AutoUpdateUiByDataChangeActivity;
 import com.databinding.demo.activity.BaseAdapterActivity;
+import com.databinding.demo.activity.CameraXActivity;
 import com.databinding.demo.activity.LiveDataActivity;
 import com.databinding.demo.activity.RoomActivity;
 import com.databinding.demo.activity.UserActivity;
+import com.databinding.demo.activity.ViewPager2Activity;
+import com.databinding.demo.custom.RadarDrawable;
 import com.databinding.demo.model.UserModel;
 
 /**
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         userModel.setPassword("123456");
         binding.setUserInfo(userModel);
         binding.setMainClickListener(this);
+
     }
 
     public void autoUpdateUiByDataChange(UserModel userModel) {
@@ -76,6 +80,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void viewPager2Demo(View view) {
+        Log.e("XLog", "========== Id : " + view.getId());
+        Intent intent = new Intent(this, ViewPager2Activity.class);
+        startActivity(intent);
+    }
+
+
+    public void goToCameraX(View view) {
+        Log.e("XLog", "========== Id : " + view.getId());
+        Intent intent = new Intent(this, CameraXActivity.class);
+        startActivity(intent);
+    }
 
 
 }

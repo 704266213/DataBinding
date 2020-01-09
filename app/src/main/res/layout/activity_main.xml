@@ -19,93 +19,126 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        tools:context=".MainActivity">
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/autoUpdateUiByDataChange"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{()->mainClickListener.autoUpdateUiByDataChange(userInfo)}"
-            android:text="DataBinding基本使用"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/dataBindingAdapter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{(view)->mainClickListener.dataBindingAdapter(view)}"
-            android:text="Adapter数据绑定"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/autoUpdateUiByDataChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{()->mainClickListener.autoUpdateUiByDataChange(userInfo)}"
+                android:text="DataBinding基本使用"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/baseAdapterBinding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{(view)->mainClickListener.baseAdapterBinding(view)}"
-            android:text="基础Adapter的事件绑定"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/dataBindingAdapter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.dataBindingAdapter(view)}"
+                android:text="Adapter数据绑定"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/baseActivityBinding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{(view)->mainClickListener.baseActivityBinding(view)}"
-            android:text="基础Activity的事件绑定"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/baseAdapterBinding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.baseAdapterBinding(view)}"
+                android:text="基础Adapter的事件绑定"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/liveDateDemo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{(view)->mainClickListener.liveDateDemo(view)}"
-            android:text="liveDateDemo"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/baseActivityBinding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.baseActivityBinding(view)}"
+                android:text="基础Activity的事件绑定"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/roomDemo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:onClick="@{(view)->mainClickListener.roomDemo(view)}"
-            android:text="数据库roomDemo"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/liveDateDemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.liveDateDemo(view)}"
+                android:text="liveDateDemo"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/roomDemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.roomDemo(view)}"
+                android:text="数据库roomDemo"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/viewPager2Demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.viewPager2Demo(view)}"
+                android:text="ViewPager2的使用"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{(view)->mainClickListener.goToCameraX(view)}"
+                android:text="CameraX"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </layout>
 
