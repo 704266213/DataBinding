@@ -1,7 +1,12 @@
 package com.databinding.demo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleEventObserver;
+import androidx.lifecycle.LifecycleOwner;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,6 +44,20 @@ public class MainActivity extends AppCompatActivity {
         userModel.setPassword("123456");
         binding.setUserInfo(userModel);
         binding.setMainClickListener(this);
+
+        /**
+         * getLifecycle() 获取的是 FragmentActivity 的 mFragmentLifecycleRegistry对象
+         * 在FragmentActivity的生命周期中调用 mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)方法
+         * 切换生命周期的状态
+         */
+        getLifecycle().addObserver(new LifecycleEventObserver() {
+
+            @Override
+            public void onStateChanged(@NonNull LifecycleOwner source, @NonNull Lifecycle.Event event) {
+
+            }
+        });
+
 
     }
 

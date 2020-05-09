@@ -1,6 +1,7 @@
 package com.databinding.demo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -43,7 +44,6 @@ public class LiveDataActivity extends AppCompatActivity {
             }
         });
 
-
         final BookModel bookModel = new BookModel();
         final Random random = new Random();
         updateData.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,7 @@ public class LiveDataActivity extends AppCompatActivity {
                 bookViewModel.getBookLiveData().postValue(bookModel);
             }
         });
+
 
     }
 }
