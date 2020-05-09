@@ -5,12 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.databinding.demo.R;
+import com.databinding.demo.listener.OnItemClick;
+import com.databinding.demo.listener.OnItemClickListener;
 import com.databinding.demo.util.ScreenUtil;
 import com.databinding.demo.view.CornerImageView;
 
@@ -23,10 +24,15 @@ public class PagerViewAdapter extends RecyclerView.Adapter<PagerViewAdapter.Page
     private Context context;
     private boolean canLoop;
     public static final int multipleOfItemCount = 100;
+    private OnItemClickListener onItemClickListener;
 
     public PagerViewAdapter(Context context) {
         this.context = context;
         listData = new ArrayList<>();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     public void setCanLoop(Boolean canLoop) {
@@ -48,37 +54,36 @@ public class PagerViewAdapter extends RecyclerView.Adapter<PagerViewAdapter.Page
     @Override
     public void onBindViewHolder(@NonNull PagerViewHolder holder, int position) {
 
-        int resId;
-        if (canLoop) {
-            int realPosition = position % listData.size();
-            resId = listData.get(realPosition);
-        } else {
-            resId = listData.get(position);
-        }
+        int realPosition = canLoop ? position % listData.size() : position;
 
+        int resId = listData.get(realPosition);
         Log.e("XLog", "=============resId : " + resId);
+
         holder.bannerItemIcon.setBackgroundResource(resId);
+
+        holder.onItemClick.setPosition(realPosition);
+        holder.onItemClick.setEntity(resId);
     }
 
     @Override
     public int getItemCount() {
         int size = listData.size();
-        if (canLoop) {
-            return size * multipleOfItemCount * 2;
-        } else {
-            return size;
-        }
+        return canLoop ? size * multipleOfItemCount * 2 : size;
     }
 
 
     class PagerViewHolder extends RecyclerView.ViewHolder {
 
         private CornerImageView bannerItemIcon;
+        private OnItemClick onItemClick;
 
         public PagerViewHolder(@NonNull View itemView) {
             super(itemView);
             bannerItemIcon = itemView.findViewById(R.id.bannerItemIcon);
             bannerItemIcon.setRoundCorner(ScreenUtil.dp2px(8));
+
+            onItemClick = new OnItemClick(onItemClickListener);
+            itemView.setOnClickListener(onItemClick);
         }
     }
 }

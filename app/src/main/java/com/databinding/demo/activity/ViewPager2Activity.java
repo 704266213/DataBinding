@@ -9,10 +9,13 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.databinding.demo.R;
 import com.databinding.demo.adapter.PagerViewAdapter;
 import com.databinding.demo.layoutmanager.ScrollDurationManger;
+import com.databinding.demo.listener.OnItemClickListener;
 import com.databinding.demo.transform.OverlapPageTransformer;
 import com.databinding.demo.transform.ScaleInTransformer;
 
@@ -20,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViewPager2Activity extends AppCompatActivity {
+public class ViewPager2Activity extends AppCompatActivity implements OnItemClickListener<Integer> {
 
 
     private PagerViewAdapter pagerViewAdapter;
@@ -50,7 +53,6 @@ public class ViewPager2Activity extends AppCompatActivity {
         ScrollDurationManger.reflectLayoutManager(viewPager, 200);
 
         int padding = (int) getResources().getDimension(R.dimen.dimen_30);
-
         //获取viewPager的RecycleView对象
         RecyclerView recyclerView = (RecyclerView) viewPager.getChildAt(0);
         //设置RecycleView对象的padding
@@ -75,6 +77,7 @@ public class ViewPager2Activity extends AppCompatActivity {
         viewPager.setPageTransformer(mCompositePageTransformer);
 
         pagerViewAdapter = new PagerViewAdapter(this);
+        pagerViewAdapter.setOnItemClickListener(this);
         viewPager.setAdapter(pagerViewAdapter);
     }
 
@@ -89,7 +92,11 @@ public class ViewPager2Activity extends AppCompatActivity {
 
         pagerViewAdapter.setCanLoop(true);
         //切换到指定页，是否展示过渡中间页
-        viewPager.setCurrentItem(listData.size() * PagerViewAdapter.multipleOfItemCount);
+        viewPager.setCurrentItem(listData.size() * PagerViewAdapter.multipleOfItemCount, false);
     }
 
+    @Override
+    public void onItemClick(View targetView, Integer entity, int position) {
+        Log.e("XLog", "===position : " + position + "  resId : " + entity);
+    }
 }
